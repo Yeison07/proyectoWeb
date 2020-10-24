@@ -51,50 +51,27 @@
   </div>
 
   <div class="col-sm-12 col-md-3 col-lg-9">
+  <form name="form" action="CategoriaServlet" method="get">
     <p class="h5">Detalle del producto</p>
+    </form>
     <img src="imagenes/camisa1.png" class="img-fluid rounded float-left" alt="Responsive image">
-    <p class="float-none">Categoria</p>
-       <p class="h5 float-none">Producto 1</p>
+    <form name="form" action="SuperServlet" method="get">
+    <p class="float-none"> <c:out value='${categoria.descripcion}'/></p>
+    </form>
+    <form name="form" action="SuperServlet" method="get">
+       <p class="h5 float-none"> <c:out value='${producto.nombre}'/></p>
       <p class="float-none">
-       $ 10.000<br>
-       Descripción aqui
+       $  <c:out value='${producto.valor}'/><br>
+        <c:out value='${producto.descripcion}'/>
     </p>
+    </form>
     <p class="float-left pt-5">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed enim et ligula posuere viverra. Mauris massa lectus, mollis vitae enim at, faucibus malesuada justo. Praesent vel semper nulla, et maximus magna. Morbi vel ultrices odio. Aenean nec rhoncus enim. Nam elementum et nulla id luctus. Mauris non neque volutpat, ullamcorper risus a, varius tortor.
     </p>
   </div>
 </div>
 
-<div class="modal fade" id="modal_contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Formulario de contacto</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="">
-          <div class="form-group">
-            <label>Nombre:</label>
-            <input type="text" placeholder="Ingrese su nombre "class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Email:</label>
-            <input type="Email" placeholder="Ingrese su contraseña "class="form-control">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" rows="5"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Enviar</button>
-      </div>
-    </div>
-  </div>
-</div>
+<jsp:include page="modalContacto.jsp" />  
 
 
   <footer>

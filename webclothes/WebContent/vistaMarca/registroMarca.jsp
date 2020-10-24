@@ -9,25 +9,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" href="<%=request.getContextPath()%>css/style.css">
+     <link rel="stylesheet" href="css/style.css">
     <title>Didier Sachs</title>
   </head>
   	<body>
   	<header>
   		<div>
-  	<img src="<%=request.getContextPath()%>imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
+  	<img src="imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
 	</div>
   	
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="<%=request.getContextPath()%>imagenes/1.png" class="d-block w-100" alt="...">
+        <img src="imagenes/1.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="<%=request.getContextPath()%>imagenes/2.png" class="d-block w-100" alt="...">
+      <img src="imagenes/2.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="<%=request.getContextPath()%>imagenes/3.png" class="d-block w-100" alt="...">
+      <img src="imagenes/3.png" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>
@@ -54,24 +54,21 @@
   <div class="col-sm-12 col-md-12 col-lg-7 pl-5">
   
   <c:if test="${marca!=null}">
-	<form action="update" method="post">
+	<form name="form" action="update" method="get">
 	</c:if>
 	<c:if test="${marca==null}">
-	<form action="insert" method="post">
+	<form name="form" action="insert" method="get">
 	</c:if>
-	<caption>
-	<h2>
-	<c:if test="${marca!=null}">
-			Agregar nueva Marca
-	</c:if>
-	</h2>
-	</caption>
-	
+
 	<c:if test="${marca!=null}">
 	<input type="hidden" name="id" value="<c:out value='${marca.id}'/>"/>
 	</c:if>
 
-    <form name="form" method="get" action="MarcaServlet">
+     <div class="form-group row">
+    <label for="InputReferencia" class="col-sm-2 col-form-label">ID</label>
+    <div class="col-sm-5">
+    <input type="text" class="form-control" value="<c:out value='${marca.id}'/>"  name="id" id="InputNombre">  
+    </div>
   <div class="form-group row">
     <label for="InputReferencia" class="col-sm-2 col-form-label">Nombre</label>
     <div class="col-sm-5">
@@ -92,36 +89,7 @@
 </div>
 
 
-<div class="modal fade" id="modal_contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Formulario de contacto</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="">
-          <div class="form-group">
-            <label>Nombre:</label>
-            <input type="text" placeholder="Ingrese su nombre "class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Email:</label>
-            <input type="Email" placeholder="Ingrese su contraseña "class="form-control">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" rows="5"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Enviar</button>
-      </div>
-    </div>
-  </div>
-</div>
+<jsp:include page="../modalContacto.jsp" />  
 
 
 

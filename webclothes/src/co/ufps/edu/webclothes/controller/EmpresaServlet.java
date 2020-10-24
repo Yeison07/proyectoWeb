@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,7 @@ import co.ufps.edu.webclothes.model.Empresa;
 /**
  * Servlet implementation class EmpresaServlet
  */
-@WebServlet("/")
+@WebServlet("/EmpresaServlet")
 public class EmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -27,7 +28,7 @@ public class EmpresaServlet extends HttpServlet {
 	
   
 	@Override
-	public void init() throws ServletException {
+	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		super.init();
 		this.empresaD=new EmpresaDAO();
@@ -95,7 +96,7 @@ public class EmpresaServlet extends HttpServlet {
 		Empresa empresa= new Empresa(nombre,quienesS,emailC,direccion,telefonoC,face,twitt,insta);
 		
 		empresaD.insert(empresa);
-		response.sendRedirect("vistaEmpresa/ListaEmpresa.jsp"); 
+		response.sendRedirect("list"); 
 	}
 	
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {

@@ -50,8 +50,8 @@ private Conexion conexion;
 		try {
 			PreparedStatement preparedStatement= conexion.setPreaparedStatement(UPDATE_CATEGORIA_SQL);
 			preparedStatement.setInt(1, categoria.getId());
-			preparedStatement.setString(3, categoria.getDescripcion());
-			preparedStatement.setString(2, categoria.getEstado());
+			preparedStatement.setString(2, categoria.getDescripcion());
+			preparedStatement.setString(3, categoria.getEstado());
 			preparedStatement.setInt(4,categoria.getId());
 			conexion.execute();
 		} catch (SQLException e) {
@@ -68,8 +68,8 @@ private Conexion conexion;
 			
 			while(rs.next()) {
 				int id= rs.getInt("id");
-				String descripcion = rs.getString("nombre");
-				String estado = rs.getString("descripcion");
+				String descripcion = rs.getString("descripcion");
+				String estado = rs.getString("estado");
 						
 				categorias.add(new Categoria(id,descripcion,estado));
 				

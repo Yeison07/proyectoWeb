@@ -24,13 +24,24 @@
       <div class="modal-body">
        <div class="col-sm-12 col-md-3 col-lg-9">
     <img src="imagenes/camisa1.png" class="img-fluid rounded float-left" alt="Responsive image">
-    <p class="float-none">Categoria</p>
-       <p class="h5 float-none">Producto 1</p>
+     
+	<form name="form" action=SuperServlet method="get">
+	
+    <p class="float-none"><c:out value='${categoria.descripcion}'/></p>
+     </form>
+    <form name="form" action="SuperServlet" method="get">
+       <p class="h5 float-none"><c:out value='${producto.nombre}'/></p>
       <p class="float-none">
-       $ 10.000<br>
-       Descripción aqui
+       <c:out value='${producto.valor}'/><br>
+       <c:out value='${producto.descripcion}'/>
     </p>
+    </form>
+   
+    
+    <a href="detalleProduc.jsp">
     <button type="button" class="btn btn-primary float-right">Mas</button>
+    </a>
+    
     <p class="float-left pt-5">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed enim et ligula posuere viverra. Mauris massa lectus, mollis vitae enim at, faucibus malesuada justo. Praesent vel semper nulla, et maximus magna. Morbi vel ultrices odio. Aenean nec rhoncus enim. Nam elementum et nulla id luctus. Mauris non neque volutpat, ullamcorper risus a, varius tortor.
     </p>

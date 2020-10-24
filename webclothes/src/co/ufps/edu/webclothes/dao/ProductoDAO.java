@@ -14,9 +14,9 @@ public class ProductoDAO {
 
 private Conexion conexion;
 	
-	private static final String INSERT_PRODUCTO_SQL="INSERT INTO producto(id,nombre,descripcion) VALUES (?,?,?);";
+	private static final String INSERT_PRODUCTO_SQL="INSERT INTO producto(referencia,nombre,descripcioncorta,detalle,valor,palabrasclave,estado,categoria_id,marca_id) VALUES (?,?,?,?,?,?,?,?,?);";
 	private static final String DELETE_PRODUCTO_SQL="DELETE FROM producto WHERE id=?;";
-	private static final String UPDATE_PRODUCTO_SQL="UPDATE producto SET id=?,nombre=?,descripcion=? WHERE id=?;";
+	private static final String UPDATE_PRODUCTO_SQL="UPDATE producto SET referencia=?,nombre=?,descripcioncorta=?,detalle=?,valor=?,palabrasclave=?,estado=?,categoria_id=?,marca_id=? WHERE id=?;";
 	private static final String SELECT_PRODUCTO_BY_ID="SELECT * FROM producto where id=?;";
 	private static final String SELECT_ALL_PRODUCTOS="SELECT * FROM producto;";
 	

@@ -114,7 +114,7 @@ private Conexion conexion;
 				String face = rs.getString("facebook");
 				String twitt =rs.getString ("twitter");
 				String insta =rs.getString ("instagram");
-				empresa = new Empresa(nombre,quienesS,emailC,direccion,telefonoC,face,twitt,insta);
+				empresa = new Empresa(id,nombre,quienesS,emailC,direccion,telefonoC,face,twitt,insta);
 				
 			}
 		} catch (SQLException e) {

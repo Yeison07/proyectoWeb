@@ -57,38 +57,55 @@
         <p class="h5">Novedades productos</p>
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-3">
-            <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image">    
+          <a href="info?id=<c:out value='${1}' />">
+          <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image">    
+          </a>
           </div>
 
           <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-            <img src="imagenes/camisa2.png" class="img-fluid" alt="Responsive image">    
+          <a href="info?id=<c:out value='${2}' />">
+          <img src="imagenes/camisa2.png" class="img-fluid" alt="Responsive image">  
+          </a>
           </div>
 
           <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-            <img src="imagenes/camisa3.png" class="img-fluid" alt="Responsive image">    
+          <a href="info?id=<c:out value='${3}' />">
+           <img src="imagenes/camisa3.png" class="img-fluid" alt="Responsive image">  
+          </a>
           </div>
 
           <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-            <img src="imagenes/camisa4.png" class="img-fluid" alt="Responsive image">    
+          <a href="info?id=<c:out value='${4}' />">
+           <img src="imagenes/camisa4.png" class="img-fluid" alt="Responsive image">   
+          </a>
           </div>
         </div>
 
         <div class="row pt-5">
             
              <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-            <img src="imagenes/camisa5.png" class="img-fluid" alt="Responsive image">    
+             <a href="modal.jsp?id=<c:out value='${5}' />">
+            <img src="imagenes/camisa5.png" class="img-fluid" alt="Responsive image">  
+          </a>
           </div>
 
            <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-            <img src="imagenes/camisa6.png" class="img-fluid" alt="Responsive image">    
+           <a href="info?id=<c:out value='${6}' />">
+            <img src="imagenes/camisa6.png" class="img-fluid" alt="Responsive image">
+          </a>   
           </div>
 
            <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-            <img src="imagenes/camisa7.png" class="img-fluid" alt="Responsive image">    
+           <a href="info?id=<c:out value='${7}' />">
+          <img src="imagenes/camisa7.png" class="img-fluid" alt="Responsive image">   
+          </a>
           </div>
 
            <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-            <img src="imagenes/camisa8.png" class="img-fluid" alt="Responsive image">    
+           <a href="info?id=<c:out value='${8}' />">
+          <img src="imagenes/camisa8.png" class="img-fluid" alt="Responsive image">
+          </a>
+                
           </div>
 
           </div>
@@ -109,33 +126,25 @@
 
 
   <div class="col-sm-12 col-md-6 col-lg-6">
-
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12 text-center">
         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMattelsa%2F&tabs=timeline&width=600&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="600" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
       </div>
-      
     </div>
-
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12 text-center pt-5">
         <a href="https://www.facebook.com/Mattelsa/" target="_blank" rel="noopener noreferrer">
           <button type="button" class="btn btn-primary ">Siguenos</button>
-        </a>
-         
+        </a>        
       </div>
-       
     </div>
-
-
     </div>
-
   </div>
 
   
 
 
-
+<jsp:include page="modalContacto.jsp" />  
      
   
 
@@ -190,54 +199,6 @@
   </div>
   </footer>
 
-
-
-
-
-  <div class="modal fade" id="modal_contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Formulario de contacto</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="">
-          <div class="form-group">
-            <label>Nombre:</label>
-            <input type="text" placeholder="Ingrese su nombre "class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Email:</label>
-            <input type="Email" placeholder="Ingrese su contraseña "class="form-control">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" rows="5"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Enviar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  	
 
     
     

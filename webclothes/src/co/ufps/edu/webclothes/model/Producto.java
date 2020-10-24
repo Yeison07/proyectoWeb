@@ -28,7 +28,7 @@ public class Producto implements Serializable {
 	}
 	
 	public Producto(String referencia, String nombre, String descripcion, String detalle, String palabrasC,
-			String estado, int categoria_id, int marca_id) {
+			String estado,Double valor, int categoria_id, int marca_id) {
 		super();
 		this.referencia = referencia;
 		this.nombre = nombre;
@@ -38,6 +38,7 @@ public class Producto implements Serializable {
 		this.estado = estado;
 		this.categoria_id = categoria_id;
 		this.marca_id = marca_id;
+		this.valor=valor;
 		
 	}
 
