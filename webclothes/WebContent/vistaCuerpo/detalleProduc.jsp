@@ -71,7 +71,7 @@
   </div>
 </div>
 
-<jsp:include page="modalContacto.jsp" />  
+<jsp:include page="../vistaModales/modalContacto.jsp" />  
 
 
   <footer>

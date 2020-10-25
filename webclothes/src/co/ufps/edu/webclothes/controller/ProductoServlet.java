@@ -18,7 +18,7 @@ import co.ufps.edu.webclothes.model.Producto;
 /**
  * Servlet implementation class ProductoServlet
  */
-@WebServlet("/ProductoServlet")
+@WebServlet(name="ProductoServlet", urlPatterns= {"/Producto.do"})
 public class ProductoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProductoDAO productoD;

@@ -54,16 +54,16 @@
   <div class="col-sm-12 col-md-12 col-lg-7 pl-5">
   
   <c:if test="${categoria!=null}">
-	<form name="form" action="update" method="get">
+	<form name="form" action="${pageContext.request.contextPath}/Categoria.do" method="get">
+	<input type="hidden" name="action" value="update"/>
 	</c:if>
 	
 	<c:if test="${categoria==null}">
-	<form name="form" action="insert" method="get">
+	<form name="form" action="${pageContext.request.contextPath}/Categoria.do" method="get">
+	<input type="hidden" name="action" value="insert"/>
 	</c:if>
 
-	<c:if test="${categoria!=null}">
-	<input type="hidden" name="id" value="<c:out value='${categoria.id}'/>"/>
-	</c:if>
+	
 
     
      <div class="form-group row">
@@ -95,7 +95,7 @@
 </div>
 
 
-<jsp:include page="../modalContacto.jsp" />  
+<jsp:include page="../vistaModales/modalContacto.jsp" />  
 
 
   <footer>

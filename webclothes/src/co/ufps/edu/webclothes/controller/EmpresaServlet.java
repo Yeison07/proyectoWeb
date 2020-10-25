@@ -20,7 +20,7 @@ import co.ufps.edu.webclothes.model.Empresa;
 /**
  * Servlet implementation class EmpresaServlet
  */
-@WebServlet("/EmpresaServlet")
+@WebServlet(name="EmpresaServlet", urlPatterns= {"/Empresa.do"})
 public class EmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

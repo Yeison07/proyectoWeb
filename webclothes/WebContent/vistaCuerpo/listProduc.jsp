@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
+    <c:set var="root" value="${pageContext.request.contextPath}" />
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,25 +9,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="${root}/css/style.css">
     <title>Didier Sachs</title>
   </head>
   	<body>
   	<header>
   		<div>
-  	<img src="imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
+  	<img src="${root}/imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
 	</div>
   	
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="imagenes/1.png" class="d-block w-100" alt="...">
+        <img src="${root}/imagenes/1.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="imagenes/2.png" class="d-block w-100" alt="...">
+      <img src="${root}/imagenes/2.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="imagenes/3.png" class="d-block w-100" alt="...">
+      <img src="${root}/imagenes/3.png" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>
@@ -62,91 +62,38 @@
     </div>
 
     <div class="row pt-4">
+    
+    
+    <c:forEach begin="0" end="3" var="imagen" items="${imagen}">
       <div class="col-sm-12 col-md-12 col-lg">
-         <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image">
+         <img src="${imagen.ruta}" class="img-fluid" alt="Responsive image">
       </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa2.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa3.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa4.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa5.png" class="img-fluid" alt="Responsive image">
-      </div>
+    </c:forEach>
+    
     </div>
 
     <div class="row pt-4">
+       <c:forEach begin="4" end="7" var="imagen" items="${imagen}">
       <div class="col-sm-12 col-md-12 col-lg">
-         <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image">
+         <img src="${imagen.ruta}" class="img-fluid" alt="Responsive image">
       </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa2.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa3.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa4.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa5.png" class="img-fluid" alt="Responsive image">
-      </div>
+    </c:forEach>
     </div>
 
     <div class="row pt-4">
+  	 <c:forEach begin="8" end="11" var="imagen" items="${imagen}">
       <div class="col-sm-12 col-md-12 col-lg">
-         <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image">
+         <img src="${imagen.ruta}" class="img-fluid" alt="Responsive image">
       </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa2.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa3.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa4.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa5.png" class="img-fluid" alt="Responsive image">
-      </div>
+    </c:forEach>
     </div>
 
     <div class="row pt-4">
+     <c:forEach begin="12" end="15" var="imagen" items="${imagen}">
       <div class="col-sm-12 col-md-12 col-lg">
-         <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image">
+         <img src="${imagen.ruta}" class="img-fluid" alt="Responsive image">
       </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa2.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa3.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa4.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg">
-        <img src="imagenes/camisa5.png" class="img-fluid" alt="Responsive image">
-      </div>
+    </c:forEach>
     </div>
 
     <div class="row pt-4">
@@ -161,7 +108,7 @@
 
 
 
-<jsp:include page="modalContacto.jsp" />  
+<jsp:include page="../vistaModales/modalContacto.jsp" />  
 
 
   <footer>

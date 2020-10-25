@@ -57,8 +57,10 @@
         <p class="h5">Novedades productos</p>
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-3">
-          <a href="info?id=<c:out value='${1}' />">
+          
+          <a href="${pageContext.request.contextPath}/Super.do?action=info&id=<c:out value='${1}' />">
           <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image">    
+          <button type="button" id="btn1_index"></button>
           </a>
           </div>
 
@@ -143,8 +145,13 @@
 
   
 
+  
 
-<jsp:include page="modalContacto.jsp" />  
+
+<jsp:include page="vistaModales/modalContacto.jsp"/>
+<jsp:include page="vistaModales/modal.jsp"/>
+
+  
      
   
 
@@ -189,7 +196,7 @@
         <div class="col-sm-12 col-md-12 col-lg-12 text-center">
         <p>
           Todos los derechos reservados Didier Sanchs.
-          DiseÃ±ado y programado por Yeison Soto
+          Diseñado y programado por Yeison Soto
         </p>
     
         </div>

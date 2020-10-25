@@ -22,7 +22,7 @@ import co.ufps.edu.webclothes.model.Categoria;
 /**
  * Servlet implementation class CategoriaServlet
  */
-@WebServlet("/CategoriaServlet")
+@WebServlet(name="CategoriaServlet", urlPatterns= {"/Categoria.do"})
 public class CategoriaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -45,22 +45,27 @@ public class CategoriaServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action=request.getServletPath();
+		String action= (request.getParameter("action") != null) ? request.getParameter("action"):"list";
+		System.out.println(action);
+		
+		
+		
+		
 		try {
 			switch (action) {
-			case "/new":
+			case "new":
 				showNewForm(request,response);
 				break;
-			case "/insert":
+			case "insert":
 				insertarCategoria(request,response);
 				break;
-			case "/delete":
+			case "delete":
 				eliminarCategoria(request,response);
 				break;
-			case "/edit":
+			case "edit":
 				showEditForm(request,response);
 				break;
-			case "/update":
+			case "update":
 				actualizarCategoria(request,response);
 				break;
 			default:
@@ -71,6 +76,8 @@ public class CategoriaServlet extends HttpServlet {
 			// TODO: handle exception
 			throw new ServletException (e);
 		}
+		
+		
 			
 	}
 	
@@ -79,7 +86,7 @@ public class CategoriaServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 	
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -119,7 +126,7 @@ public class CategoriaServlet extends HttpServlet {
 		Categoria categoria= new Categoria(id,descripcion,estado);
 		
 		categoriaD.update(categoria);
-		response.sendRedirect("listar"); 
+		response.sendRedirect(request.getContextPath()); 
 	}
 
 	private void eliminarCategoria(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {

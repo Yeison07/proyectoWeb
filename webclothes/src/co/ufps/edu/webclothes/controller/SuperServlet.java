@@ -20,7 +20,7 @@ import co.ufps.edu.webclothes.model.Producto;
 /**
  * Servlet implementation class SuperServlet
  */
-@WebServlet("/")
+@WebServlet(name="SuperServlet", urlPatterns= {"/Super.do"})
 public class SuperServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -46,14 +46,16 @@ public class SuperServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action=request.getServletPath();
+		String action= (request.getParameter("action") != null) ? request.getParameter("action"):"list";
+		System.out.println(action);
+		
 		try {
 			switch (action) {
-			case "/info":
+			case "info":
 				listCategoriaXProducto(request,response);
 				break;
 			default:
-				redirect(request,response);
+				volver(request,response);
 				break;
 			}
 		} catch (SQLException e) {
@@ -72,24 +74,25 @@ public class SuperServlet extends HttpServlet {
 	
 	private void listCategoriaXProducto(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
 		int id =Integer.parseInt(request.getParameter("id"));
+		System.out.println(id);
 		Categoria categoria = categoriaD.select(id);
 		Producto producto = productoD.select(id);
 		request.setAttribute("categoria", categoria);
 		request.setAttribute("producto", producto);
 		
-		RequestDispatcher dispatcher= request.getRequestDispatcher("modal.jsp");
-		dispatcher.forward(request, response);
-		
-		
-	}
-	
-	private void redirect(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
 		
 		RequestDispatcher dispatcher= request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request, response);
 		
 		
 	}
+	
+	public void volver(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException{
+		response.sendRedirect(request.getContextPath()); 
+		
+	}
+	
+	
 
 
 }

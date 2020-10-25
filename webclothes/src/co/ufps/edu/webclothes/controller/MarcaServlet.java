@@ -19,7 +19,7 @@ import co.ufps.edu.webclothes.model.Marca;
 /**
  * Servlet implementation class MarcaServlet
  */
-@WebServlet("/MarcaServlet")
+@WebServlet(name="MarcaServlet", urlPatterns= {"/Marca.do"})
 public class MarcaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
