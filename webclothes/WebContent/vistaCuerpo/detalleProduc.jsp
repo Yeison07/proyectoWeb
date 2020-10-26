@@ -51,22 +51,19 @@
   </div>
 
   <div class="col-sm-12 col-md-3 col-lg-9">
-  <form name="form" action="CategoriaServlet" method="get">
+  
     <p class="h5">Detalle del producto</p>
-    </form>
+    
     <img src="imagenes/camisa1.png" class="img-fluid rounded float-left" alt="Responsive image">
-    <form name="form" action="SuperServlet" method="get">
-    <p class="float-none"> <c:out value='${categoria.descripcion}'/></p>
-    </form>
-    <form name="form" action="SuperServlet" method="get">
-       <p class="h5 float-none"> <c:out value='${producto.nombre}'/></p>
+    <p class="float-none"> ${categoria.descripcion}</p>
+       <p class="h5 float-none"> ${producto.nombre}</p>
       <p class="float-none">
-       $  <c:out value='${producto.valor}'/><br>
-        <c:out value='${producto.descripcion}'/>
+     $  ${producto.valor}<br>
+       ${producto.descripcion}
     </p>
-    </form>
+    
     <p class="float-left pt-5">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed enim et ligula posuere viverra. Mauris massa lectus, mollis vitae enim at, faucibus malesuada justo. Praesent vel semper nulla, et maximus magna. Morbi vel ultrices odio. Aenean nec rhoncus enim. Nam elementum et nulla id luctus. Mauris non neque volutpat, ullamcorper risus a, varius tortor.
+      ${producto.detalle}
     </p>
   </div>
 </div>

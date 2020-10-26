@@ -63,7 +63,7 @@
     </tr>
   </thead>
   <tbody>
-  <a href="<${pageContext.request.contextPath}/new" class="btn btn-success">Añadir Categoria</a>
+  <a href="${pageContext.request.contextPath}/Categoria.do?action=new">Añadir Categoria</a>
 <!--   for (Todo todo: todos) {  -->
   <c:forEach var="categoria" items="${listCategoria}">
 
@@ -78,7 +78,8 @@
             <c:out value="${categoria.estado}" />
               </td>
                       
-       <td><a href="${pageContext.request.contextPath}/Categoria.do?action=edit&id=${categoria.id}">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${categoria.id}' />">Eliminar</a></td>
+       <td><a href="${pageContext.request.contextPath}/Categoria.do?action=edit&id=${categoria.id}">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+       <a href="${pageContext.request.contextPath}/Categoria.do?action=delete&id=${categoria.id}">Eliminar</a></td>
         </tr>
      </c:forEach>
      <!-- } -->

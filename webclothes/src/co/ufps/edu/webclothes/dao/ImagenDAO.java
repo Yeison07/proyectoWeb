@@ -14,8 +14,8 @@ public class ImagenDAO {
 
 	Conexion conexion;
 	
-	private static final String SELECT_IMAGE_BY_ID="SELECT * FROM producto where id=?;";
-	private static final String SELECT_ALL_IMAGES="SELECT * FROM producto;";
+	private static final String SELECT_IMAGE_BY_ID="SELECT * FROM imagen where idimagen=?;";
+	private static final String SELECT_ALL_IMAGES="SELECT * FROM imagen;";
 	
 	public ImagenDAO() {
 		this.conexion=Conexion.getConexion();
@@ -31,7 +31,9 @@ public class ImagenDAO {
 			
 			while (rs.next()) {
 				int id=rs.getInt(1);
+				
 				String direccion=rs.getString(2);
+				
 				Imagen imagen = new Imagen(id,direccion);
 				list.add(imagen);
 			}

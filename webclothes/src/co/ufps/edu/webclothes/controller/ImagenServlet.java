@@ -43,14 +43,13 @@ public class ImagenServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action=request.getServletPath();
+		String action= (request.getParameter("action") != null) ? request.getParameter("action"):"list";
+		System.out.println(action);
+		
 		try {
 			switch (action) {
-			case "ImagenServlet/list":
+			case "imagenlist":
 				listImagen(request,response);
-				break;
-			case "ImagenServlet/listId":
-				listImagenId(request,response);
 				break;
 			default:
 				listImagen(request,response);
@@ -72,24 +71,16 @@ public class ImagenServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-private void listImagen(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
+	private void listImagen(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
 		
 		List <Imagen> imagen = imagenD.selectAll();
 		request.setAttribute("imagen", imagen);
 		
-		RequestDispatcher dispatcher= request.getRequestDispatcher("listProduc.jsp");
+		RequestDispatcher dispatcher= request.getRequestDispatcher("vistaCuerpo/listProduc.jsp");
 		dispatcher.forward(request, response);
 		
 		
 	}
-private void listImagenId(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
-	int id =Integer.parseInt(request.getParameter("id"));
-	Imagen imagen =imagenD.select(id);
-	request.setAttribute("imagen", imagen);	
-	RequestDispatcher dispatcher= request.getRequestDispatcher("listProduc.jsp");
-	dispatcher.forward(request, response);
 	
-	
-}
 
 }

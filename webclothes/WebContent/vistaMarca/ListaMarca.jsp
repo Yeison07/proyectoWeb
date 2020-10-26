@@ -63,7 +63,7 @@
     </tr>
   </thead>
   <tbody>
-  
+  <a href="<${pageContext.request.contextPath}/Marca.do?action=new" class="btn btn-success">Añadir Marca</a>
 <!--   for (Todo todo: todos) {  -->
   <c:forEach var="marca" items="${listMarca}">
 
@@ -78,7 +78,8 @@
             <c:out value="${marca.descripcion}" />
               </td>
                       
-       <td><a href="edit?id=<c:out value='${marca.id}' />">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${marca.id}' />">Eliminar</a></td>
+       <td><a href="${pageContext.request.contextPath}/Marca.do?action=edit&id=${marca.id}">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+       <a href="${pageContext.request.contextPath}/Marca.do?action=delete&id=${categoria.id}">Eliminar</a></td>
         </tr>
      </c:forEach>
      <!-- } -->

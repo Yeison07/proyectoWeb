@@ -40,22 +40,24 @@ public class MarcaServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action=request.getServletPath();
+		String action= (request.getParameter("action") != null) ? request.getParameter("action"):"list";
+		System.out.println(action);
+		
 		try {
 			switch (action) {
-			case "/new":
+			case "new":
 				showNewForm(request,response);
 				break;
-			case "/insert":
+			case "insert":
 				insertarMarca(request,response);
 				break;
-			case "/delete":
+			case "delete":
 				eliminarMarca(request,response);
 				break;
-			case "/edit":
+			case "edit":
 				showEditForm(request,response);
 				break;
-			case "/update":
+			case "update":
 				actualizarMarca(request,response);
 				break;
 			default:
@@ -89,7 +91,7 @@ public class MarcaServlet extends HttpServlet {
 		Marca marca= new Marca(id,nombre,descripcion);
 		
 		marcaD.insert(marca);
-		response.sendRedirect("vistaMarca/ListaMarca.jsp"); 
+		response.sendRedirect(request.getContextPath()+"/Marca.do"); 
 	}
 	
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -114,7 +116,7 @@ public class MarcaServlet extends HttpServlet {
 		Marca marca= new Marca(id,nombre,descripcion);
 		
 		marcaD.update(marca);
-		response.sendRedirect("listar"); 
+		response.sendRedirect(request.getContextPath()+"/Marca.do"); 
 	}
 
 	private void eliminarMarca(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
@@ -123,7 +125,7 @@ public class MarcaServlet extends HttpServlet {
 		
 		marcaD.delete(id);
 		
-		response.sendRedirect("listar");
+		response.sendRedirect(request.getContextPath()+"/Marca.do"); 
 		
 	}
 	

@@ -54,10 +54,12 @@
   <div class="col-sm-12 col-md-12 col-lg-7 pl-5">
   
   <c:if test="${marca!=null}">
-	<form name="form" action="update" method="get">
+	<form name="form" action="${pageContext.request.contextPath}/Marca.do" method="get">
+	<input type="hidden" name="action" value="update"/>
 	</c:if>
 	<c:if test="${marca==null}">
-	<form name="form" action="insert" method="get">
+	<form name="form" action="${pageContext.request.contextPath}/Marca.do" method="get">
+	<input type="hidden" name="action" value="update"/>
 	</c:if>
 
 	<c:if test="${marca!=null}">

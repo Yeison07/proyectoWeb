@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<div class="modal fade" id="modal_prueba" tabindex="-1" role="dialog" aria-labelledby="no" aria-hidden="true">
+<div class="modal fade" id="modal_info" tabindex="-1" role="dialog" aria-labelledby="no" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -22,19 +22,19 @@
       <div class="modal-body">
       
           <div class="col-sm-12 col-md-3 col-lg-9">
-    <img src="imagenes/camisa1.png" class="img-fluid rounded float-left" alt="Responsive image">
-     <c:forEach begin=0 end=1 var="producto" items="${producto}">
-    <p class="float-none">${categoria.id}</p>
-       <p class="h5 float-none">${producto.id}</p>
-      <p class="float-none">
-       $ ${producto.valor}<br>
-       ${producto.descripcion}
+    <img id="img_modal_info" src="" class="img-fluid rounded float-left" alt="Responsive image">
+    <p class="float-none" id="catego_nombre"></p>
+       <p class="h5 float-none" id="produc_nombre"></p>
+      <p class="float-none" id="producto_precio"></p>
+    <p class="float-none" id="producto_descrip"></p>
+     <a href="${pageContext.request.contextPath}/Super.do?action=detalleM">
+        <button type="button" class="btn btn-primary float-right">Mas</button> 
+     </a>
+    
+    <p class="float-left pt-5" id="produc_detalle">
+    
     </p>
-    <button type="button" class="btn btn-primary float-right">Mas</button>
-    <p class="float-left pt-5">
-    ${producto.detalle}
-    </p>
-    </c:forEach>
+    
   </div>
   
       </div>

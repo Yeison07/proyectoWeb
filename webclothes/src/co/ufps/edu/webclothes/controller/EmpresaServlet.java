@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import co.ufps.edu.webclothes.dao.EmpresaDAO;
+import co.ufps.edu.webclothes.model.Categoria;
 import co.ufps.edu.webclothes.model.Empresa;
+import co.ufps.edu.webclothes.model.Producto;
 
 /**
  * Servlet implementation class EmpresaServlet
@@ -40,22 +42,24 @@ public class EmpresaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String action=request.getServletPath();
+		String action= (request.getParameter("action") != null) ? request.getParameter("action"):"list";
+		System.out.println(action);
+		
 		try {
 			switch (action) {
-			case "/new":
+			case "new":
 				showNewForm(request,response);
 				break;
-			case "/insert":
+			case "insert":
 				insertarEmpresa(request,response);
 				break;
-			case "/delete":
+			case "delete":
 				eliminarEmpresa(request,response);
 				break;
-			case "/edit":
+			case "edit":
 				showEditForm(request,response);
 				break;
-			case "/update":
+			case "update":
 				actualizarEmpresa(request,response);
 				break;
 			default:
@@ -96,7 +100,7 @@ public class EmpresaServlet extends HttpServlet {
 		Empresa empresa= new Empresa(nombre,quienesS,emailC,direccion,telefonoC,face,twitt,insta);
 		
 		empresaD.insert(empresa);
-		response.sendRedirect("list"); 
+		response.sendRedirect(request.getContextPath()+"/Empresa.do"); 
 	}
 	
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -127,7 +131,7 @@ public class EmpresaServlet extends HttpServlet {
 		Empresa empresa= new Empresa(id,nombre,quienesS,emailC,direccion,telefonoC,face,twitt,insta);
 		
 		empresaD.update(empresa);
-		response.sendRedirect("listar"); 
+		response.sendRedirect(request.getContextPath()+"/Empresa.do"); 
 	}
 
 	private void eliminarEmpresa(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
@@ -136,7 +140,7 @@ public class EmpresaServlet extends HttpServlet {
 		
 		empresaD.delete(id);
 		
-		response.sendRedirect("listar");
+		response.sendRedirect(request.getContextPath()+"/Empresa.do"); 
 		
 	}
 	
@@ -151,7 +155,6 @@ public class EmpresaServlet extends HttpServlet {
 		
 	}
 
-	
 	
 
 

@@ -35,22 +35,24 @@ public class ProductoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action=request.getServletPath();
+		String action= (request.getParameter("action") != null) ? request.getParameter("action"):"list";
+		System.out.println(action);
+		
 		try {
 			switch (action) {
-			case "/new":
+			case "new":
 				showNewForm(request,response);
 				break;
-			case "/insert":
+			case "insert":
 				insertarProducto(request,response);
 				break;
-			case "/delete":
+			case "delete":
 				eliminarProducto(request,response);
 				break;
-			case "/edit":
+			case "edit":
 				showEditForm(request,response);
 				break;
-			case "/update":
+			case "update":
 				actualizarProducto(request,response);
 				break;
 			default:
@@ -91,7 +93,7 @@ public class ProductoServlet extends HttpServlet {
 		
 		Producto Producto= new Producto(referencia,nombre,descripcion,detalle,palabrasC,estado,valor,categoria_id,marca_id);
 		productoD.insert(Producto);
-		response.sendRedirect("vistaProducto/ListaProducto.jsp"); 
+		response.sendRedirect(request.getContextPath()); 
 	}
 	
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -122,7 +124,7 @@ public class ProductoServlet extends HttpServlet {
 		Producto producto= new Producto(id,referencia,nombre,descripcion,detalle,palabrasC,estado,valor,categoria_id,marca_id);
 		
 		productoD.update(producto);
-		response.sendRedirect("listar"); 
+		response.sendRedirect(request.getContextPath()); 
 	}
 
 	private void eliminarProducto(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
@@ -131,7 +133,7 @@ public class ProductoServlet extends HttpServlet {
 		
 		productoD.delete(id);
 		
-		response.sendRedirect("listar");
+		response.sendRedirect(request.getContextPath()); 
 		
 	}
 	

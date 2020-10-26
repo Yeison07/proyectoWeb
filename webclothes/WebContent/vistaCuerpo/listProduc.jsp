@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <c:set var="root" value="${pageContext.request.contextPath}" />
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,19 +15,19 @@
   	<body>
   	<header>
   		<div>
-  	<img src="${root}/imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
+  	<img src="imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
 	</div>
   	
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="${root}/imagenes/1.png" class="d-block w-100" alt="...">
+        <img src="imagenes/1.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="${root}/imagenes/2.png" class="d-block w-100" alt="...">
+      <img src="imagenes/2.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="${root}/imagenes/3.png" class="d-block w-100" alt="...">
+      <img src="imagenes/3.png" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>
@@ -83,7 +83,7 @@
     <div class="row pt-4">
   	 <c:forEach begin="8" end="11" var="imagen" items="${imagen}">
       <div class="col-sm-12 col-md-12 col-lg">
-         <img src="${imagen.ruta}" class="img-fluid" alt="Responsive image">
+         <img src="<c:out value="${imagen.ruta}"></c:out>" class="img-fluid" alt="Responsive image">
       </div>
     </c:forEach>
     </div>

@@ -63,7 +63,7 @@
     </tr>
   </thead>
   <tbody>
-  
+  <a href="${pageContext.request.contextPath}/Producto.do?action=new" class="btn btn-success">Añadir Producto</a>
 <!--   for (Todo todo: todos) {  -->
   <c:forEach var="producto" items="${listProducto}">
 
@@ -78,7 +78,8 @@
             <c:out value="${producto.valor}" />
               </td>
                       
-       <td><a href="edit?id=<c:out value='${producto.id}' />">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${producto.id}' />">Eliminar</a></td>
+       <td><a href="${pageContext.request.contextPath}/Producto.do?action=edit&id=${producto.id}">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+       <a href="${pageContext.request.contextPath}/Producto.do?action=delete&id=${categoria.id}">Eliminar</a></td>
         </tr>
      </c:forEach>
      <!-- } -->

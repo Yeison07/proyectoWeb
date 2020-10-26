@@ -54,10 +54,12 @@
   <div class="col-sm-12 col-md-12 col-lg-7 pl-5">
   
   <c:if test="${empresa!=null}">
-	<form action="update" method="get">
+	<form action="${pageContext.request.contextPath}/Empresa.do" method="get">
+	<input type="hidden" name="action" value="update"/>
 	</c:if>
 	<c:if test="${empresa==null}">
-	<form action="insert" method="get">
+	<form action="${pageContext.request.contextPath}/Empresa.do" method="get">
+	<input type="hidden" name="action" value="insert"/>
 	</c:if>
 	
 	<c:if test="${empresa!=null}">
@@ -68,14 +70,14 @@
   <div class="form-group row">
     <label for="InputReferencia" class="col-sm-2 col-form-label">Nombre</label>
     <div class="col-sm-5">
-    <input type="text" class="form-control" value="<c:out value='${empresa.nombre}'/>"  name="nombre" id="InputReferencia">  
+    <input type="text" class="form-control" value="<c:out value='${empresa.nombre}'/>"  name="nombre" id="InputNombre">  
     </div>
     
   </div>
   <div class="form-group row" >
     <label for="InputNombre" class="col-sm-2 col-form-label">Quienes somos</label>
     <div class="col-sm-5">
-    <textarea class="form-control" value="<c:out value='${empresa.quienesS}'/>"   name="quienes" id="InputDetalle" rows="4"></textarea>  
+    <textarea class="form-control"    name="quienes" id="InputQuienes" rows="4"><c:out value='${empresa.quienesS}'/></textarea>  
     </div>
     
   </div>
@@ -89,14 +91,14 @@
   <div class="form-group row">
     <label for="InputDetalle" class="col-sm-2 col-form-label">Direccion</label>
     <div class="col-sm-5">
-   <input type="text" class="form-control" value="<c:out value='${empresa.direccion}'/>"  name="direccion" id="InputDescri"> 
+   <input type="text" class="form-control" value="<c:out value='${empresa.direccion}'/>"  name="direccion" id="InputDireccion"> 
     </div>
     
   </div>
   <div class="form-group row">
     <label for="InputDetalle" class="col-sm-2 col-form-label">Telefono</label>
     <div class="col-sm-5">
-    <input type="text" class="form-control" value="<c:out value='${empresa.telefonoC}'/>"  name="telefono" id="InputDescri"> 
+    <input type="text" class="form-control" value="<c:out value='${empresa.telefonoC}'/>"  name="telefono" id="InputTelefono"> 
     </div>
     
   </div>

@@ -43,9 +43,14 @@
       
       <div class="row">
          <div class="col-sm-12 col-md-12 col-lg-12">
+         
+         <p class="h1 display-4 pb-3">
+         Quienes somos
+         </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem leo, lacinia tempor posuere vel, suscipit id velit. Quisque ultrices mi auctor tellus hendrerit, quis varius nunc vulputate. Etiam non nunc ac sem cursus placerat sit amet ut ex. Aliquam luctus nisl in nibh tempus, volutpat sodales ex luctus. Proin dictum rutrum est, eget fermentum dolor accumsan ac. Aliquam faucibus maximus augue a ultricies. Mauris malesuada euismod magna in vehicula. Integer ultricies viverra dolor, eu luctus sapien mattis vel. Nullam ac sapien sit amet arcu viverra sagittis. Sed lacinia sed risus eu molestie. Vestibulum sollicitudin dignissim dolor, gravida sollicitudin nisi auctor quis. Pellentesque nibh arcu, accumsan id tristique porta, volutpat a sapien. Pellentesque ante sem, placerat sed rhoncus vel, hendrerit id nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        ${empresa.quienesS}
       </p>
+       
       </div>
 
       
@@ -57,56 +62,54 @@
         <p class="h5">Novedades productos</p>
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-3">
-          
-          <a href="${pageContext.request.contextPath}/Super.do?action=info&id=<c:out value='${1}' />">
-          <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image">    
-          <button type="button" id="btn1_index"></button>
-          </a>
+          <a class="btn btn-outline-*" href="javascript:detalles('1')">
+          <img src="imagenes/camisa1.png" class="img-fluid" alt="Responsive image" /> 
+          </a>            
           </div>
 
           <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-          <a href="info?id=<c:out value='${2}' />">
-          <img src="imagenes/camisa2.png" class="img-fluid" alt="Responsive image">  
-          </a>
+        <a class="btn btn-outline-*" href="javascript:detalles('2')">
+          <img src="imagenes/camisa2.png" class="img-fluid" alt="Responsive image" /> 
+          </a> 
           </div>
 
           <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-          <a href="info?id=<c:out value='${3}' />">
-           <img src="imagenes/camisa3.png" class="img-fluid" alt="Responsive image">  
-          </a>
+         <a class="btn btn-outline-*" href="javascript:detalles('3')">
+          <img src="imagenes/camisa3.png" class="img-fluid" alt="Responsive image" /> 
+          </a>  
           </div>
 
           <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-          <a href="info?id=<c:out value='${4}' />">
-           <img src="imagenes/camisa4.png" class="img-fluid" alt="Responsive image">   
-          </a>
+        <a class="btn btn-outline-*" href="javascript:detalles('4')">
+          <img src="imagenes/camisa4.png" class="img-fluid" alt="Responsive image" /> 
+          </a>  
           </div>
         </div>
 
         <div class="row pt-5">
             
              <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-             <a href="modal.jsp?id=<c:out value='${5}' />">
-            <img src="imagenes/camisa5.png" class="img-fluid" alt="Responsive image">  
-          </a>
+            <a class="btn btn-outline-*" href="javascript:detalles('5')">
+          <img src="imagenes/camisa5.png" class="img-fluid" alt="Responsive image" /> 
+          </a>  
           </div>
 
            <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-           <a href="info?id=<c:out value='${6}' />">
-            <img src="imagenes/camisa6.png" class="img-fluid" alt="Responsive image">
-          </a>   
+         <a class="btn btn-outline-*" href="javascript:detalles('6')">
+          <img src="imagenes/camisa6.png" class="img-fluid" alt="Responsive image" /> 
+          </a>    
           </div>
 
            <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-           <a href="info?id=<c:out value='${7}' />">
-          <img src="imagenes/camisa7.png" class="img-fluid" alt="Responsive image">   
-          </a>
+          <a class="btn btn-outline-*" href="javascript:detalles('7')">
+          <img src="imagenes/camisa7.png" class="img-fluid" alt="Responsive image" /> 
+          </a>  
           </div>
 
            <div class="col-sm-12 col-md-6 col-lg-3 text-center">
-           <a href="info?id=<c:out value='${8}' />">
-          <img src="imagenes/camisa8.png" class="img-fluid" alt="Responsive image">
-          </a>
+         <a class="btn btn-outline-*" href="javascript:detalles('8')">
+          <img src="imagenes/camisa8.png" class="img-fluid" alt="Responsive image" /> 
+          </a>  
                 
           </div>
 
@@ -114,7 +117,7 @@
 
           <div class="row pt-5">
             <div class="col-sm-12 col-md-12 col-lg-12 text-center pb-5">
-              <a href="listProduc.html">
+              <a href="vistaCuerpo/listProduc.jsp">
                 <button type="button" class="btn btn-primary"id="btn_verProduc">Ver todos los productos</button> 
               </a>
               
@@ -150,7 +153,6 @@
 
 <jsp:include page="vistaModales/modalContacto.jsp"/>
 <jsp:include page="vistaModales/modal.jsp"/>
-
   
      
   
@@ -206,12 +208,34 @@
   </div>
   </footer>
 
-
+	
     
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/apps.js"></script>
+    <script>
+		
+	function detalles(id){
+	$.ajax({
+			url:"${pageContext.request.contextPath}/Super.do?action=detalle&id="+id,
+			type:"GET",
+			dataType:"JSON",
+			success: function (data){
+				$('#catego_nombre').text(data.categoria);
+				$('#producto_precio').text("$ "+data.valor);
+				$('#produc_nombre').text(data.producto);
+				$('#produc_detalle').text(data.detalle);
+				$('#producto_descrip').text(data.descripcion);
+				var dir=data.imagen;
+				$('#img_modal_info').attr('src',dir);
+				$('#modal_info').modal('show');
+			}
+	}
+	);
+	}
+	</script>
   </body>
 </html>

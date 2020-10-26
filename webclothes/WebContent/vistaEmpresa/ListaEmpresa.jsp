@@ -69,7 +69,7 @@
     </tr>
   </thead>
   <tbody>
-  
+  <a href="${pageContext.request.contextPath}/Empresa.do?action=new" class="btn btn-success">Añadir Empresa</a>
 <!--   for (Todo todo: todos) {  -->
   <c:forEach var="empresa" items="${listEmpresa}">
 
@@ -102,7 +102,8 @@
         <c:out value="${empresa.insta}" />
         	</td>
                       
-       <td><a href="edit?id=<c:out value='${empresa.id}' />">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${empresa.id}' />">Eliminar</a></td>
+       <td><a href="${pageContext.request.contextPath}/Empresa.do?action=edit&id=${empresa.id}">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+       <a href="${pageContext.request.contextPath}/Empresa.do?action=edit&id=${empresa.id}">Eliminar</a></td>
         </tr>
      </c:forEach>
      <!-- } -->

@@ -1,6 +1,7 @@
 package co.ufps.edu.webclothes.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -10,11 +11,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.json.simple.JSONObject;
 
 import co.ufps.edu.webclothes.dao.CategoriaDAO;
+import co.ufps.edu.webclothes.dao.ImagenDAO;
 import co.ufps.edu.webclothes.dao.MarcaDAO;
 import co.ufps.edu.webclothes.dao.ProductoDAO;
 import co.ufps.edu.webclothes.model.Categoria;
+import co.ufps.edu.webclothes.model.Imagen;
 import co.ufps.edu.webclothes.model.Producto;
 
 /**
@@ -26,6 +32,9 @@ public class SuperServlet extends HttpServlet {
        
 	private ProductoDAO productoD;
 	private CategoriaDAO categoriaD;
+	private ImagenDAO imagenD;
+	HttpSession session;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -39,6 +48,8 @@ public class SuperServlet extends HttpServlet {
 		
 		this.categoriaD=new CategoriaDAO();
 		this.productoD=new ProductoDAO();
+		this.imagenD=new ImagenDAO();
+		
 	}
 
 	/**
@@ -51,8 +62,11 @@ public class SuperServlet extends HttpServlet {
 		
 		try {
 			switch (action) {
-			case "info":
-				listCategoriaXProducto(request,response);
+			case "detalle":
+				detalles(request,response);
+				break;
+			case "detalleM":
+				detallesMas(request,response);
 				break;
 			default:
 				volver(request,response);
@@ -72,16 +86,39 @@ public class SuperServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private void listCategoriaXProducto(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
+	
+	
+	private void detalles(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
+		PrintWriter out= response.getWriter();
 		int id =Integer.parseInt(request.getParameter("id"));
-		System.out.println(id);
+		Producto producto = productoD.select(id);
+		Categoria categoria = categoriaD.select(producto.getCategoria_id());
+		Imagen imagen= imagenD.select(id);
+		JSONObject json= new JSONObject();
+		json.put("categoria", categoria.getDescripcion());
+		json.put("valor", producto.getValor());
+		json.put("producto", producto.getNombre());
+		json.put("descripcion", producto.getDescripcion());
+		json.put("detalle", producto.getDetalle());
+		System.out.println(imagen.getRuta());
+		json.put("imagen", imagen.getRuta());
+		
+		out.print(json);
+		
+		this.session = request.getSession(true);
+		int data = id;
+		session.setAttribute("id", data );
+		
+		
+	}
+	
+	private void detallesMas(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {	
+		int id = (int)session.getAttribute("id"); 
 		Categoria categoria = categoriaD.select(id);
 		Producto producto = productoD.select(id);
-		request.setAttribute("categoria", categoria);
 		request.setAttribute("producto", producto);
-		
-		
-		RequestDispatcher dispatcher= request.getRequestDispatcher("index.jsp");
+		request.setAttribute("categoria", categoria);
+		RequestDispatcher dispatcher= request.getRequestDispatcher("vistaCuerpo/detalleProduc.jsp");
 		dispatcher.forward(request, response);
 		
 		

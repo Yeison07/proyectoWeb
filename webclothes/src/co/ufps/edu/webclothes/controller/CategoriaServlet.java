@@ -101,7 +101,7 @@ public class CategoriaServlet extends HttpServlet {
 		
 		Categoria categoria= new Categoria(id,descripcion,estado);
 		categoriaD.insert(categoria);
-		response.sendRedirect("listar"); 
+		response.sendRedirect(request.getContextPath()); 
 	}
 	
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -135,7 +135,7 @@ public class CategoriaServlet extends HttpServlet {
 		
 		categoriaD.delete(id);
 		
-		response.sendRedirect("listar");
+		response.sendRedirect(request.getContextPath()); 
 		
 	}
 	
