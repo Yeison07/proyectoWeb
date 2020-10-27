@@ -38,60 +38,63 @@
 
   </header>  
 
-
-<div class="row pt-5">
-  
-  <div class="col-sm-12 col-md-12 col-lg-1 text-center">
-    <p> <strong>Menu</strong></p>
-    <div class="border border-dark text-center">
-           <button type="button" class="btn btn-light mt-1" id="btn_marcas">Marcas</button>
-          <button type="button" class="btn btn-light" id="btn_categ">Categorias</button>
-          <button type="button" class="btn btn-light mb-1" id="btn_produc">Productos</button>
-    </div>
-  </div>
-  
-</div>
-<div class="row justify-content-center pt-2">
-  <div class="col-sm-12 col-md-6 col-lg-10 text-center">
-      <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col"id="tabla_col_1">ID</th>
-      <th scope="col"id="tabla_col_2">Descripcion</th>
-      <th scope="col"id="tabla_col_3">Estado</th>
-      <th scope="col"id="tabla_col_9">Accion</th>
-    </tr>
-  </thead>
-  <tbody>
-  <a href="${pageContext.request.contextPath}/Categoria.do?action=new" class="btn btn-success">Añadir Categoria</a>
-<!--   for (Todo todo: todos) {  -->
-  <c:forEach var="categoria" items="${listCategoria}">
-
-         <tr>
-         	<td>
-      <c:out value="${categoria.id}" />
-       	 	</td>
-         	<td>
-           <c:out value="${categoria.descripcion}" />
-         	</td>
-         	<td>
-            <c:out value="${categoria.estado}" />
-              </td>
-                      
-       <td><a href="${pageContext.request.contextPath}/Categoria.do?action=edit&id=${categoria.id}">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; 
-       <a href="${pageContext.request.contextPath}/Categoria.do?action=delete&id=${categoria.id}">Eliminar</a></td>
-        </tr>
-     </c:forEach>
-     <!-- } -->
-    
-  </tbody>
-</table>
-  </div>
-</div>
-
-
-<jsp:include page="../vistaModales/modalContacto.jsp" />  
-
+	<div class="row pt-5">
+		<div class="col-sm-12 col-md-6 col-lg-6">
+		<p class="h1 display-1">Bienvenido</p>
+		</div>
+		
+		<div class="col-sm-12 col-md-6 col-lg-6">
+		
+		<div class="row">
+		<div class="col-sm-12 col-md-6 col-lg-12 text-center">
+		<p class="h3 display-5">Administrar Empresa</p>
+		<img src="imagenes/empresa.png" class="img-fluid rounded float-left" alt="Responsive image">
+		<a href="${pageContext.request.contextPath}/Empresa.do">
+  		<button type="button" class="btn btn-primary float-left">Administrar empresa</button> 
+  		</a>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-sm-12 col-md-6 col-lg-12 text-center">
+  		<p class="h3 display-5">Administrar Categorias</p>
+  		<img src="imagenes/categorias.png" class="img-fluid rounded float-left" alt="Responsive image">
+		<a href="${pageContext.request.contextPath}/Categoria.do">
+  		<button type="button" class="btn btn-primary float-left">Administrar categorias</button> 
+  		</a>
+  		</div>
+  		</div>
+  		
+  		<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+		<p class="h3 display-5">Administrar Marcas</p>
+		<img src="imagenes/marcas.png" class="img-fluid rounded float-left" alt="Responsive image">
+  		<a href="${pageContext.request.contextPath}/Marca.do">
+  		<button type="button" class="btn btn-primary float-left">Administrar marcas</button> 
+  		</a>
+  		</div>
+  		</div>
+  		
+  		<div class="row">
+  		<div class="col-sm-12 col-md-6 col-lg-12 text-center">
+  		<p class="h3 display-5">Administrar Productos</p>
+  		<img src="imagenes/productos.png" class="img-fluid rounded float-left" alt="Responsive image">
+		<a href="${pageContext.request.contextPath}/Producto.do">
+  		<button type="button" class="btn btn-primary  float-left">Administrar productos</button> 
+  		</a>
+		</div>
+		</div>
+		
+		
+		
+		
+		
+	
+  		
+  		
+	</div>
+	
+ </div>
 
 
   <footer>
@@ -135,7 +138,7 @@
         <div class="col-sm-12 col-md-12 col-lg-12 text-center">
         <p>
           Todos los derechos reservados Didier Sanchs.
-          Diseñado y programado por Yeison Soto
+          DiseÃ±ado y programado por Yeison Soto
         </p>
     
         </div>

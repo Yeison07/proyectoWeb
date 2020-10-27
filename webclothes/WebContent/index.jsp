@@ -15,6 +15,9 @@
   	<header>
   		<div>
   	<img src="imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
+  	<a href="${pageContext.request.contextPath}/Admin.do?action=login">
+  	<button type="button" class="btn btn-primary  float-right mx-3 float-left">Log in</button> 
+  	</a>
 	</div>
   	
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -117,7 +120,7 @@
 
           <div class="row pt-5">
             <div class="col-sm-12 col-md-12 col-lg-12 text-center pb-5">
-              <a href="vistaCuerpo/listProduc.jsp">
+              <a href="${pageContext.request.contextPath}/Imagen.do?action=imagenlist">
                 <button type="button" class="btn btn-primary"id="btn_verProduc">Ver todos los productos</button> 
               </a>
               
@@ -167,13 +170,13 @@
           <p class="h5">Informacion de contacto</p>  
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6">
-        <a href="https://www.facebook.com">
+        <a href="${empresa.face}">
           <img src="imagenes/face.png" class="img-fluid rounded float-right mx-3" alt="Responsive image">
         </a>
-         <a href="https://twitter.com/?lang=es">
+         <a href="${empresa.twitt}">
           <img src="imagenes/twitter.png" class="img-fluid rounded float-right mx-3" alt="Responsive image">
         </a>
-         <a href="https://www.instagram.com/?hl=es-la">
+         <a href="${empresa.insta}">
           <img src="imagenes/insta.png" class="img-fluid rounded float-right mx-3" alt="Responsive image">
         </a>
         </div>

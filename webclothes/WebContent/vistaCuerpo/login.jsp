@@ -38,60 +38,35 @@
 
   </header>  
 
-
-<div class="row pt-5">
+	<div class="row pt-5">
+		<div class="col-sm-0 col-md-0 col-lg-4"></div>
+		<div class="col-sm-12 col-md-12 col-lg-4 pl-5">
   
-  <div class="col-sm-12 col-md-12 col-lg-1 text-center">
-    <p> <strong>Menu</strong></p>
-    <div class="border border-dark text-center">
-           <button type="button" class="btn btn-light mt-1" id="btn_marcas">Marcas</button>
-          <button type="button" class="btn btn-light" id="btn_categ">Categorias</button>
-          <button type="button" class="btn btn-light mb-1" id="btn_produc">Productos</button>
+  
+	<form name="form" action="${pageContext.request.contextPath}/Admin.do" method="get">
+	<input type="hidden" name="action" value="login"/>
+	
+     <div class="form-group row">
+    <label for="InputReferencia" class="col-sm-2 col-form-label">Usuario</label>
+    <div class="col-sm-5">
+    <input type="text" class="form-control" value="Ingrese usuario"  name="user" id="InputUser">  
     </div>
+    
+  </div>
+  <div class="form-group row">
+    <label for="InputReferencia" class="col-sm-2 col-form-label">Contraseña</label>
+    <div class="col-sm-5">
+    <input type="text" class="form-control" value="Ingrese contraseña"  name="contra" id="InputContra">  
+    </div>
+    
   </div>
   
-</div>
-<div class="row justify-content-center pt-2">
-  <div class="col-sm-12 col-md-6 col-lg-10 text-center">
-      <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col"id="tabla_col_1">ID</th>
-      <th scope="col"id="tabla_col_2">Descripcion</th>
-      <th scope="col"id="tabla_col_3">Estado</th>
-      <th scope="col"id="tabla_col_9">Accion</th>
-    </tr>
-  </thead>
-  <tbody>
-  <a href="${pageContext.request.contextPath}/Categoria.do?action=new" class="btn btn-success">Añadir Categoria</a>
-<!--   for (Todo todo: todos) {  -->
-  <c:forEach var="categoria" items="${listCategoria}">
-
-         <tr>
-         	<td>
-      <c:out value="${categoria.id}" />
-       	 	</td>
-         	<td>
-           <c:out value="${categoria.descripcion}" />
-         	</td>
-         	<td>
-            <c:out value="${categoria.estado}" />
-              </td>
-                      
-       <td><a href="${pageContext.request.contextPath}/Categoria.do?action=edit&id=${categoria.id}">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; 
-       <a href="${pageContext.request.contextPath}/Categoria.do?action=delete&id=${categoria.id}">Eliminar</a></td>
-        </tr>
-     </c:forEach>
-     <!-- } -->
-    
-  </tbody>
-</table>
-  </div>
-</div>
-
-
-<jsp:include page="../vistaModales/modalContacto.jsp" />  
-
+  <button type="submit" class="btn btn-success">Guardar</button>
+   
+</form>
+	</div>
+	<div class="col-sm-0 col-md-0 col-lg-4"></div>
+ </div>
 
 
   <footer>
@@ -135,7 +110,7 @@
         <div class="col-sm-12 col-md-12 col-lg-12 text-center">
         <p>
           Todos los derechos reservados Didier Sanchs.
-          Diseñado y programado por Yeison Soto
+          DiseÃ±ado y programado por Yeison Soto
         </p>
     
         </div>

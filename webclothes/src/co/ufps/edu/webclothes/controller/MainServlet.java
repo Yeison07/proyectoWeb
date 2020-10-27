@@ -49,7 +49,7 @@ public class MainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 			try {
-				listCategoriaID(request,response);
+				main(request,response);
 			} catch (SQLException | IOException | ServletException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -65,7 +65,7 @@ public class MainServlet extends HttpServlet {
 	}
 	
 
-	private void listCategoriaID(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
+	private void main(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
 		
 		
 		Empresa empresa = empresaD.select(1);

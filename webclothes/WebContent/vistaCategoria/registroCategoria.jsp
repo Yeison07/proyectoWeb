@@ -89,7 +89,7 @@
   </div>
   <button type="submit" class="btn btn-success">Guardar</button>
    
-  <button type ></button>
+ 
 </form>
   </div>  
 </div>
