@@ -14,7 +14,9 @@
   	<body>
   	<header>
   		<div>
+  	<a href="${pageContext.request.contextPath}/Home">
   	<img src="imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
+  	</a>
 	</div>
   	
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -54,7 +56,7 @@
   
     <p class="h5">Detalle del producto</p>
     
-    <img src="imagenes/camisa1.png" class="img-fluid rounded float-left" alt="Responsive image">
+    <img src="${imagen.ruta}" class="img-fluid rounded float-left" alt="Responsive image">
     <p class="float-none"> ${categoria.descripcion}</p>
        <p class="h5 float-none"> ${producto.nombre}</p>
       <p class="float-none">

@@ -15,7 +15,9 @@
   	<body>
   	<header>
   		<div>
+  <a href="${pageContext.request.contextPath}/Home">
   	<img src="imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
+  	</a>
 	</div>
   	
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -44,19 +46,19 @@
   
   
 	<form name="form" action="${pageContext.request.contextPath}/Admin.do" method="get">
-	<input type="hidden" name="action" value="login"/>
+	<input type="hidden" name="action" value="ingresar"/>
 	
      <div class="form-group row">
     <label for="InputReferencia" class="col-sm-2 col-form-label">Usuario</label>
     <div class="col-sm-5">
-    <input type="text" class="form-control" value="Ingrese usuario"  name="user" id="InputUser">  
+    <input type="text" class="form-control"  name="user" id="InputUser">  
     </div>
     
   </div>
   <div class="form-group row">
     <label for="InputReferencia" class="col-sm-2 col-form-label">Contraseña</label>
     <div class="col-sm-5">
-    <input type="text" class="form-control" value="Ingrese contraseña"  name="contra" id="InputContra">  
+    <input type="text" class="form-control"  name="contra" id="InputContra">  
     </div>
     
   </div>

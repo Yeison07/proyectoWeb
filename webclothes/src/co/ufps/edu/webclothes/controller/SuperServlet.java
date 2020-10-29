@@ -114,10 +114,12 @@ public class SuperServlet extends HttpServlet {
 	
 	private void detallesMas(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {	
 		int id = (int)session.getAttribute("id"); 
-		Categoria categoria = categoriaD.select(id);
 		Producto producto = productoD.select(id);
+		Categoria categoria = categoriaD.select(producto.getCategoria_id());
+		Imagen imagen = imagenD.select(id);
 		request.setAttribute("producto", producto);
 		request.setAttribute("categoria", categoria);
+		request.setAttribute("imagen", imagen);
 		RequestDispatcher dispatcher= request.getRequestDispatcher("vistaCuerpo/detalleProduc.jsp");
 		dispatcher.forward(request, response);
 		

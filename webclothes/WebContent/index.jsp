@@ -14,7 +14,11 @@
   	<body>
   	<header>
   		<div>
+  		<a href="${pageContext.request.contextPath}/Home">
   	<img src="imagenes/logo.png" class="img-fluid rounded float-left" alt="Responsive image">
+  	</a>
+  	</div>
+  	<div>
   	<a href="${pageContext.request.contextPath}/Admin.do?action=login">
   	<button type="button" class="btn btn-primary  float-right mx-3 float-left">Log in</button> 
   	</a>

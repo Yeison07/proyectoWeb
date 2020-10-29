@@ -46,6 +46,9 @@ public class AdminServlet extends HttpServlet {
 			case "login":
 				verificar(request,response);
 				break;
+			case "ingresar":
+				ingresar(request,response);
+				break;
 			default:
 				volver(request,response);
 				break;
@@ -66,9 +69,29 @@ public class AdminServlet extends HttpServlet {
 
 	private void verificar(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher= request.getRequestDispatcher("vistaCuerpo/AdminPanel.jsp");
+		RequestDispatcher dispatcher= request.getRequestDispatcher("vistaCuerpo/login.jsp");
 		dispatcher.forward(request, response);
 	}
+	
+	private void ingresar(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException,ServletException {
+		// TODO Auto-generated method stub
+		String user=request.getParameter("user");
+		String contra=request.getParameter("contra");
+		List <Admin> adminList= adminD.selectAll();
+		
+		
+		for (int i = 0; i < adminList.size(); i++) {
+			if (adminList.get(i).getUser().equals(user) && adminList.get(i).getContrasena().equals(contra)) {
+				RequestDispatcher dispatcher= request.getRequestDispatcher("vistaCuerpo/AdminPanel.jsp");
+				dispatcher.forward(request, response);
+				return;
+			}
+			
+		}
+		verificar(request,response);
+		
+	}
+	
 	
 
 	/**

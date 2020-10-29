@@ -12,7 +12,7 @@ import co.ufps.edu.webclothes.model.Admin;
 public class AdminDAO {
 	
 	private Conexion conexion;
-	private static final String SELECT_ALL_ADMINS="SELECT * FROM categoria;";
+	private static final String SELECT_ALL_ADMINS="SELECT * FROM admin;";
 	
 	public AdminDAO() {
 		this.conexion=Conexion.getConexion();
