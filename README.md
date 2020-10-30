@@ -1,3 +1,3 @@
 # proyectoWeb
 
-Contraseña y usuario de la BD: admin 123 ó yesion 1234
+Contraseña y usuario para logear como admin: admin 123 ó yesion 1234
